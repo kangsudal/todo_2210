@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:todo_sqlite/models/todo.dart';
+import 'package:todo_sqlite/providers/todo_default.dart';
 
 class ListScreen extends StatefulWidget {
   const ListScreen({Key? key}) : super(key: key);
@@ -10,13 +13,17 @@ class ListScreen extends StatefulWidget {
 
 class _ListScreenState extends State<ListScreen> {
   List<Todo> todos = [];
+  TodoDefault todoDefault = TodoDefault();
   bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    setState(() {
-      isLoading = false;
+    Timer(Duration(seconds: 2), () {
+      todos = todoDefault.getTodos(); // 핵심!
+      setState(() {
+        isLoading = false;
+      });
     });
   }
 
