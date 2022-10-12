@@ -53,7 +53,57 @@ class _ListScreenState extends State<ListScreen> {
             '+',
             style: TextStyle(fontSize: 25),
           ),
-          onPressed: () {}),
+          onPressed: () {
+            showDialog(
+                //다이얼로그를 띄우는 작업
+                context: context,
+                builder: (context) {
+                  String title = '';
+                  String description = '';
+                  return AlertDialog(
+                    //띄울 다이얼로그가 어떤 형태인지 정의
+                    title: Text('할 일 추가하기'),
+                    content: Container(
+                      height: 200,
+                      child: Column(
+                        children: [
+                          TextField(
+                            onChanged: (value) {
+                              title = value;
+                            },
+                          ),
+                          TextField(
+                            onChanged: (value) {
+                              description = value;
+                            },
+                            decoration: InputDecoration(labelText: '설명'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          setState(() {
+                            print('[UI] ADD');
+                            todoDefault.addTodo(
+                              Todo(title: title, description: description),
+                            );
+                          });
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('추가'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('취소'),
+                      ),
+                    ],
+                  );
+                });
+          }),
       body: isLoading
           ? Center(
               child: CircularProgressIndicator(),
