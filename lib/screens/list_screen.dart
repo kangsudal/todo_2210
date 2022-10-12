@@ -112,7 +112,25 @@ class _ListScreenState extends State<ListScreen> {
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(todos[index].title),
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return SimpleDialog(
+                            title: Text('할 일'),
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                child: Text('제목 : ' + todos[index].title),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                child: Text('설명 : ' + todos[index].description),
+                              )
+                            ],
+                          );
+                        });
+                  },
                   trailing: Container(
                     width: 80,
                     child: Row(
