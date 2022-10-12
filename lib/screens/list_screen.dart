@@ -203,7 +203,36 @@ class _ListScreenState extends State<ListScreen> {
                           padding: EdgeInsets.all(5),
                           child: InkWell(
                             child: Icon(Icons.delete),
-                            onTap: () {},
+                            onTap: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title: Text('할 일 삭제하기'),
+                                      content: Container(
+                                        child: Text('삭제하시겠습니까?'),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () async {
+                                            setState(() {
+                                              todoDefault.deleteTodo(
+                                                  todos[index].id ?? 0);
+                                              Navigator.of(context).pop();
+                                            });
+                                          },
+                                          child: Text('삭제'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('취소'),
+                                        ),
+                                      ],
+                                    );
+                                  });
+                            },
                           ),
                         ),
                       ],
