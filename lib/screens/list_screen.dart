@@ -93,12 +93,14 @@ class _ListScreenState extends State<ListScreen> {
                     ),
                     actions: [
                       TextButton(
-                        onPressed: () {
+                        onPressed: () async {
+                          await todoSqlite.addTodo(
+                            Todo(title: title, description: description),
+                          );
+                          List<Todo> newTodos = await todoSqlite.getTodos();
                           setState(() {
                             print('[UI] ADD');
-                            todoDefault.addTodo(
-                              Todo(title: title, description: description),
-                            );
+                            todos = newTodos;
                           });
                           Navigator.of(context).pop();
                         },
@@ -190,8 +192,13 @@ class _ListScreenState extends State<ListScreen> {
                                                 title: title,
                                                 description: description,
                                                 id: todos[index].id);
+                                            await todoSqlite
+                                                .updateTodo(newTodo);
+                                            List<Todo> newTodos =
+                                                await todoSqlite.getTodos();
                                             setState(() {
-                                              todoDefault.updateTodo(newTodo);
+                                              // todoDefault.updateTodo(newTodo);
+                                              todos = newTodos;
                                             });
                                             Navigator.of(context).pop();
                                           },
