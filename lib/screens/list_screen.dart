@@ -232,9 +232,14 @@ class _ListScreenState extends State<ListScreen> {
                                       actions: [
                                         TextButton(
                                           onPressed: () async {
+                                            int id = todos[index].id ?? 0;
+                                            await todoSqlite.delteTodo(id);
+                                            List<Todo> newTodos =
+                                                await todoSqlite.getTodos();
                                             setState(() {
-                                              todoDefault.deleteTodo(
-                                                  todos[index].id ?? 0);
+                                              // todoDefault.deleteTodo(
+                                              //     todos[index].id ?? 0);
+                                              todos = newTodos;
                                               Navigator.of(context).pop();
                                             });
                                           },
