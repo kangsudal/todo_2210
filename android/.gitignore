@@ -11,3 +11,6 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+
+#파이어베이스와 앱을 연결하기 위한 키 파일
+google-services.json

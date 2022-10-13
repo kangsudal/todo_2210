@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "587719987954",
+    "project_id": "hahatodo-d63ab",
+    "storage_bucket": "hahatodo-d63ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587719987954:android:1babd086134e24c6ecf66b",
+        "android_client_info": {
+          "package_name": "com.todo_sqlite.todo_sqlite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587719987954-dr43pl4g9rv3qtng6gkhb57s8sb9qspu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzcZ0KBq2v4TQ4xlOFGGkAQKVNttJLRu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587719987954-dr43pl4g9rv3qtng6gkhb57s8sb9qspu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
