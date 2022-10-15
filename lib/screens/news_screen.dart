@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_sqlite/models/news.dart';
+import 'package:todo_sqlite/providers/news_api.dart';
 
 class NewsScreen extends StatefulWidget {
   const NewsScreen({Key? key}) : super(key: key);
@@ -9,14 +10,21 @@ class NewsScreen extends StatefulWidget {
 }
 
 class _NewsScreenState extends State<NewsScreen> {
+  NewsApi newsApi = NewsApi();
   List<News> news = [];
   bool isLoading = true;
+
+  Future initNews() async {
+    news = await newsApi.getNews();
+  }
 
   @override
   void initState() {
     super.initState();
-    setState(() {
-      isLoading = false;
+    initNews().then((value) {
+      setState(() {
+        isLoading = false;
+      });
     });
   }
 
