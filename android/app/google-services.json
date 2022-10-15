@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "321799251179",
+    "project_id": "stillwalking-26bf8",
+    "storage_bucket": "stillwalking-26bf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321799251179:android:47bd26d17688c54fa2caae",
+        "android_client_info": {
+          "package_name": "com.todo_sqlite.todo_sqlite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321799251179-vgjjihau8l8fpub6jvj8vt71grbrdnf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZObMuTnofsYKf8ocETJBI8pf57syS-yI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321799251179-vgjjihau8l8fpub6jvj8vt71grbrdnf5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "321799251179-pvja24cc9ohqibqt2peooah6jibfjm27.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.todosqlite.todoSqlite"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
